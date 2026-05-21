@@ -40,5 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# TinaCMS generated files
-tina/__generated__
+# TinaCMS generated files (kept in repo for TinaCloud schema sync)
+# tina/__generated__
