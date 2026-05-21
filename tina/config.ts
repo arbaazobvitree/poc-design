@@ -59,9 +59,10 @@ export default defineConfig({
             ],
           },
           {
-            type: "image",
+            type: "string",
             name: "coverImage",
-            label: "Cover Image",
+            label: "Cover Image URL",
+            description: "Paste any image URL (Unsplash, Cloudinary, etc.)",
           },
           {
             type: "rich-text",
@@ -75,7 +76,7 @@ export default defineConfig({
             label: "Photo Gallery",
             list: true,
             fields: [
-              { type: "image", name: "image", label: "Photo" },
+              { type: "string", name: "image", label: "Photo URL" },
               { type: "string", name: "caption", label: "Caption" },
             ],
           },
