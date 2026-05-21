@@ -19,7 +19,7 @@ jobs:
       - run: npm ci
 
       - name: Build TinaCMS
-        run: npx tinacms build --skip-cloud-checks
+        run: npx tinacms build
         env:
           NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
           TINA_TOKEN: ${{ secrets.TINA_TOKEN }}

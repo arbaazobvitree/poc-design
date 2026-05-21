@@ -1,0 +1,82 @@
+// tina/config.ts
+import { defineConfig } from "tinacms";
+var config_default = defineConfig({
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+  token: process.env.TINA_TOKEN,
+  branch: process.env.NEXT_PUBLIC_TINA_BRANCH || process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF || process.env.HEAD || "main",
+  build: {
+    outputFolder: "admin",
+    publicFolder: "public"
+  },
+  media: {
+    tina: {
+      mediaRoot: "uploads",
+      publicFolder: "public"
+    }
+  },
+  schema: {
+    collections: [
+      {
+        name: "project",
+        label: "Projects",
+        path: "content/projects",
+        format: "mdx",
+        ui: {
+          router: ({ document }) => `/portfolio/${document._sys.filename}`
+        },
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Project Name",
+            isTitle: true,
+            required: true
+          },
+          {
+            type: "string",
+            name: "location",
+            label: "Location"
+          },
+          {
+            type: "string",
+            name: "year",
+            label: "Year"
+          },
+          {
+            type: "string",
+            name: "category",
+            label: "Category",
+            options: [
+              { value: "residential", label: "Residential" },
+              { value: "commercial", label: "Commercial" }
+            ]
+          },
+          {
+            type: "image",
+            name: "coverImage",
+            label: "Cover Image"
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Project Description",
+            isBody: true
+          },
+          {
+            type: "object",
+            name: "gallery",
+            label: "Photo Gallery",
+            list: true,
+            fields: [
+              { type: "image", name: "image", label: "Photo" },
+              { type: "string", name: "caption", label: "Caption" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+});
+export {
+  config_default as default
+};

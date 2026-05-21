@@ -1,0 +1,14 @@
+fragment ProjectParts on Project {
+  __typename
+  title
+  location
+  year
+  category
+  coverImage
+  body
+  gallery {
+    __typename
+    image
+    caption
+  }
+}
