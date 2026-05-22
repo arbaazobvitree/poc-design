@@ -1,5 +1,3 @@
-import { cl } from '@/lib/cloudinary'
-
 interface GalleryItem {
   image?: string | null
   caption?: string | null
@@ -14,7 +12,7 @@ export default function ProjectGallery({ gallery }: { gallery: GalleryItem[] }) 
         item.image && (
           <div key={i}>
             <img
-              src={cl(item.image, 1200)}
+              src={item.image}
               alt={item.caption || `Gallery photo ${i + 1}`}
               className="w-full"
               loading="lazy"

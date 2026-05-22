@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { cl } from '@/lib/cloudinary'
 
 interface Props {
   title: string
@@ -15,7 +14,7 @@ export default function ProjectCard({ title, location, coverImage, slug }: Props
       <div className="overflow-hidden aspect-[4/3] bg-[#F5F2ED] mb-3">
         {coverImage ? (
           <img
-            src={cl(coverImage, 800)}
+            src={coverImage}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"

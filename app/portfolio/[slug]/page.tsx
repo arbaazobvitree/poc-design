@@ -3,7 +3,6 @@ import path from 'path'
 import matter from 'gray-matter'
 import Link from 'next/link'
 import ProjectGallery from '@/components/ProjectGallery'
-import { cl } from '@/lib/cloudinary'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
@@ -43,7 +42,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       {data.coverImage && (
         <div className="h-[70vh] overflow-hidden">
           <img
-            src={cl(data.coverImage, 1600)}
+            src={data.coverImage}
             alt={data.title}
             className="w-full h-full object-cover"
           />
