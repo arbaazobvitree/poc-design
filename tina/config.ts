@@ -15,9 +15,12 @@ export default defineConfig({
   },
 
   media: {
+    // Store images in your GitHub repo at public/uploads/
+    // TinaCloud commits them directly to GitHub — no separate media hosting.
     tina: {
-      mediaRoot: 'uploads',
-      publicFolder: 'public',
+      mediaRoot: "uploads",
+      publicFolder: "public",
+      static: false,
     },
   },
 
