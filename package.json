@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "tinacms dev -c \"next dev\"",
+    "prebuild": "node scripts/migrate-tina-images.mjs",
     "build": "tinacms build && next build",
     "start": "next start"
   },
